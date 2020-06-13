@@ -1,0 +1,62 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+apply from: this.rootProject.file('mogul.gradle')
+
+buildscript {
+
+    repositories {
+        google()
+        jcenter()
+        mavenCentral()
+        maven {
+            url "https://jitpack.io"
+        }
+        maven {
+            url 'http://localhost:8081/repository/imooc_release/'
+            credentials {
+                username 'admin'
+                password 'admin'
+            }
+        }
+
+        maven {
+            url 'http://localhost:8081/repository/imooc_snapshot/'
+            credentials {
+                username 'admin'
+                password 'admin'
+            }
+        }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.6.3'
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        mavenCentral()
+        maven {
+            url "https://jitpack.io"
+        }
+        maven {
+            url 'http://localhost:8081/repository/imooc_release/'
+            credentials {
+                username 'admin'
+                password 'admin'
+            }
+        }
+
+        maven {
+            url 'http://localhost:8081/repository/imooc_snapshot/'
+            credentials {
+                username 'admin'
+                password 'admin'
+            }
+        }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

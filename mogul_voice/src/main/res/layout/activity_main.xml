@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+    <!--主页内容-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/title_layout"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingStart="10dp"
+            android:paddingTop="30dp"
+            android:paddingEnd="10dp">
+
+            <TextView
+                android:id="@+id/toggle_view"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:gravity="center"
+                android:background="@drawable/ic_setting" />
+
+            <RadioGroup
+                android:id="@+id/radio_group"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingStart="50dp"
+                android:paddingEnd="50dp">
+
+                <RadioButton
+                    android:id="@+id/mine_tab"
+                    style="@style/TabRadioButton"
+                    android:background="@android:color/transparent"
+                    android:button="@android:color/transparent"
+                    android:text="@string/tab_mine" />
+
+                <RadioButton
+                    android:id="@+id/find_tab"
+                    style="@style/TabRadioButton"
+                    android:background="@android:color/transparent"
+                    android:button="@android:color/transparent"
+                    android:text="@string/find_tab" />
+
+                <RadioButton
+                    android:id="@+id/friend_tab"
+                    style="@style/TabRadioButton"
+                    android:background="@android:color/transparent"
+                    android:button="@android:color/transparent"
+                    android:text="@string/friend_tab" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/search_view"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:gravity="center"
+                android:background="@drawable/ic_search" />
+        </LinearLayout>
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <!--侧滑内容-->
+    <RelativeLayout
+        android:id="@+id/left_drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:layout_marginEnd="25dp"
+        android:background="#fff">
+
+    </RelativeLayout>
+
+
+</androidx.drawerlayout.widget.DrawerLayout>

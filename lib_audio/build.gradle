@@ -1,0 +1,53 @@
+apply plugin: 'com.android.library'
+
+apply plugin: 'maven'
+
+def pomVersionName = '1.0.0-SNAPSHOT'
+def pomName = this.getName()
+def pomDescription = 'the audio library for all project'
+def versionString = '1.0'
+def versionNumber = 1
+
+android {
+    compileSdkVersion rootProject.android.compileSdkVersion
+    buildToolsVersion rootProject.android.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.android.minSdkVersion
+        targetSdkVersion rootProject.android.targetSdkVersion
+        versionCode rootProject.android.versionCode
+        versionName rootProject.android.versionName
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation rootProject.depsLibs.appcompact
+}
+
+
+//上传maven配置
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: NEXUS_REPOSITORY_URL) {
+                authentication(userName: NEXUS_USERNAME, password: NEXUS_PASSWORD)
+            }
+            pom.project {
+                name pomName
+                version pomVersionName
+                description pomDescription
+                artifactId pomVersionName
+                groupId POM_GROUPID
+                packaging POM_PACKAGING
+            }
+        }
+    }
+}
