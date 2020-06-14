@@ -1,0 +1,6 @@
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:color="#A8A8A8"
+    tools:ignore="NewApi">
+    <item android:drawable="@color/colorWhite" />
+</ripple>
