@@ -1,6 +1,7 @@
 package com.mogul.music;
 
-import android.graphics.Typeface;
+import android.annotation.SuppressLint;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -23,7 +24,7 @@ import java.util.List;
 public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     //初始化view
-    private DrawerLayout mLayout;
+    private DrawerLayout mDrawerLayout;
     private ViewPager mViewPager;
     private TextView mToggleView;
     private TextView mSearchView;
@@ -40,11 +41,12 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     @Override
     protected void initView() {
-        mLayout = findViewById(R.id.drawer_layout);
+        mDrawerLayout = findViewById(R.id.drawer_layout);
         mViewPager = findViewById(R.id.view_pager);
         mToggleView = findViewById(R.id.toggle_view);
         mSearchView = findViewById(R.id.search_view);
         mRadioGroup = findViewById(R.id.radio_group);
+
 
         initFragments();
         initViewPager();
@@ -57,16 +59,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         mFragmentList.add(new MineFragment());
         mFragmentList.add(new FindFragment());
         mFragmentList.add(new FriendFragment());
-    }
-
-    private void setCheckedText(RadioButton radioButton) {
-        radioButton.setTextSize(20);
-        radioButton.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
-    }
-
-    private void setDefaultText(RadioButton radioButton) {
-        radioButton.setTextSize(18);
-        radioButton.setTypeface(Typeface.defaultFromStyle(Typeface.NORMAL));
     }
 
     /**
@@ -129,10 +121,12 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     }
 
+    @SuppressLint("WrongConstant")
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.toggle_view:
+                mDrawerLayout.openDrawer(Gravity.START);
                 break;
             case R.id.search_view:
                 break;

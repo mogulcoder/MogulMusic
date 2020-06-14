@@ -3,7 +3,9 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffff">
+    android:background="#ffffff"
+    android:clickable="true"
+    android:focusable="true">
 
     <!--主页内容-->
     <LinearLayout
@@ -14,7 +16,7 @@
         <LinearLayout
             android:id="@+id/title_layout"
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="75dp"
             android:gravity="center"
             android:orientation="horizontal"
             android:paddingStart="10dp"
@@ -25,8 +27,8 @@
                 android:id="@+id/toggle_view"
                 android:layout_width="22dp"
                 android:layout_height="22dp"
-                android:gravity="center"
-                android:background="@drawable/ic_setting" />
+                android:background="@drawable/ic_setting"
+                android:gravity="center" />
 
             <RadioGroup
                 android:id="@+id/radio_group"
@@ -65,8 +67,8 @@
                 android:id="@+id/search_view"
                 android:layout_width="22dp"
                 android:layout_height="22dp"
-                android:gravity="center"
-                android:background="@drawable/ic_search" />
+                android:background="@drawable/ic_search"
+                android:gravity="center" />
         </LinearLayout>
 
         <androidx.viewpager.widget.ViewPager
