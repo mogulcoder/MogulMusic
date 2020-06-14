@@ -33,7 +33,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     private HomePageAdapter mHomePageAdapter;
 
     private List<Fragment> mFragmentList;
-    private List<Fragment> mList;
 
     @Override
     protected int setContentView() {
