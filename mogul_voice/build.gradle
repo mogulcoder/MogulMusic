@@ -31,4 +31,6 @@ dependencies {
     implementation rootProject.depsLibs.material
 
     implementation project(path: ':lib_common_ui')
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
 }

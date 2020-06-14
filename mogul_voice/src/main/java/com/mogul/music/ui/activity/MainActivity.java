@@ -1,4 +1,4 @@
-package com.mogul.music;
+package com.mogul.music.ui.activity;
 
 import android.annotation.SuppressLint;
 import android.view.Gravity;
@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
 import com.mogul.lib_common_ui.base.BaseActivity;
+import com.mogul.music.R;
 import com.mogul.music.adapter.HomePageAdapter;
 import com.mogul.music.ui.fragment.FindFragment;
 import com.mogul.music.ui.fragment.FriendFragment;
