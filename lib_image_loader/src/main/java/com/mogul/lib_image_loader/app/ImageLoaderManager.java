@@ -151,7 +151,6 @@ public class ImageLoaderManager {
                 .into(target);
     }
 
-
     /**
      * 设置Notification图片
      *
