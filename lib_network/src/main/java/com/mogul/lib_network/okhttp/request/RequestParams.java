@@ -1,4 +1,4 @@
-package com.mogul.lib_network.okhttp;
+package com.mogul.lib_network.okhttp.request;
 
 import java.io.FileNotFoundException;
 import java.util.HashMap;
