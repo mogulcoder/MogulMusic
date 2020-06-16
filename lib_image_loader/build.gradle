@@ -22,4 +22,9 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation rootProject.depsLibs.appcompact
+
+    implementation rootProject.depsLibs.glide
+    implementation rootProject.depsLibs.glidecompiler
+    implementation rootProject.depsLibs.rxjava
+    implementation rootProject.depsLibs.rxandroid
 }
